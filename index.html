@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bimbonet :: prueba técnica</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./bef-styles.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="m-3">
+      <div class="d-flex flex-wrap justify-content-evenly align-items-center">
+        <h1 class="bef bef-text-principal bef bef-w-calcSD90per__MIN__75pxED">Responder <wbr /> Encuesta</h1>
+        <img src="./assets/img/unknownIcon.JPG" alt="icon" title="icon" class="d-block bef bef-w-75px" />
+      </div>
+    </header>
+    <main class="m-3">
+      <h2 class="bef bef-text-principal bef-fs-1_25rem">Contesta las siguientes preguntas</h2>
+      <h3 class="bef bef-text-grayBS bef-fs-1rem">¿Qué producto es tu preferido?</h3>
+      <div id="products"></div>
+      <button
+        id="submitBTN"
+        type="submit"
+        disabled="true"
+        onclick="onSubmit()"
+        class="btn btn-primary text-uppercase p-3 mx-auto mt-5 d-block bef bef-w-250px bef-r-2rem"
+      >
+        ¡Responde y gana!
+      </button>
+    </main>
+    <footer>
+      <p class="text-end text-danger">Modo depuración</p>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var colors = {
+        principal: "#053B95",
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/LynxPardelle/bootstrap-expanded-features@latest/bootstrap-expanded-features.min.js"></script>
+    <script src="./dist/index.js"></script>
+  </body>
+</html>
