@@ -37,7 +37,7 @@ function configProductsView() {
     var productsView = "";
     products.forEach(function (product) {
         /* <h3>${product.name}</h3> */
-        productsView += "\n    <div class=\"d-flex flex-wrap justify-content-between align-items-center\">\n      <img class=\"w-50\" src=\"" + product.image + "\" alt=\"" + product.name + "\" />\n      <div id=\"input-container-" + product._id + "\" class=\"w-50\">\n        <input type=\"number\" \n        name=\"" + product.name + "\" id=\"" + product.name + "\"\n        onkeyup=\"checkInputValid('" + product._id + "')\"\n        class=\"text-center mx-auto d-block bef bef-bw-0__0__2px__0 bef-w-100px bef-bcFocus-primary\" \n        value=\"" + (product.preference !== 0 ? product.preference : "") + "\" placeholder=\"" + (product.preference !== 0 ? product.preference : "") + "\"\n        min=\"0\" max=\"10\"/>\n      </div>\n    </div>\n  ";
+        productsView += "\n    <div class=\"d-flex flex-wrap justify-content-between align-items-center bef bef-wmx-320px my-3\">\n      <img class=\"w-50\" src=\"" + product.image + "\" alt=\"" + product.name + "\" />\n      <div id=\"input-container-" + product._id + "\" class=\"w-50\">\n        <input type=\"number\" \n        name=\"" + product.name + "\" id=\"" + product.name + "\"\n        onkeyup=\"checkInputValid('" + product._id + "')\"\n        class=\"text-center mx-auto d-block bef bef-bw-0__0__2px__0 bef-w-100px bef-bcFocus-primary\" \n        value=\"" + (product.preference !== 0 ? product.preference : "") + "\" placeholder=\"" + (product.preference !== 0 ? product.preference : "") + "\"\n        min=\"0\" max=\"10\"/>\n      </div>\n    </div>\n  ";
         window.cssCreate();
     });
     if (!!productsDiv) {

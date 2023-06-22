@@ -58,7 +58,7 @@ function configProductsView() {
   products.forEach((product) => {
     /* <h3>${product.name}</h3> */
     productsView += `
-    <div class="d-flex flex-wrap justify-content-between align-items-center">
+    <div class="d-flex flex-wrap justify-content-between align-items-center bef bef-wmx-320px my-3">
       <img class="w-50" src="${product.image}" alt="${product.name}" />
       <div id="input-container-${product._id}" class="w-50">
         <input type="number" 
