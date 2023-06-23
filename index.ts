@@ -61,7 +61,7 @@ function configProductsView() {
     <div class="d-flex flex-wrap justify-content-between align-items-center bef bef-wmx-320px my-3">
       <img class="w-50" src="${product.image}" alt="${product.name}" />
       <div id="input-container-${product._id}" class="w-50">
-        <input type="number" 
+        <input type="text" inputmode="numeric" parten="[0-9]*"
         name="${product.name}" id="${product.name}"
         onkeyup="checkInputValid('${product._id}')"
         class="text-center mx-auto d-block bef bef-bw-0__0__2px__0 bef-w-100px bef-bcFocus-primary" 
@@ -149,20 +149,22 @@ function createModal() {
         <div class="position-fixed w-75 p-3 bef bef-s-12_5vw bef-t-12_5vh bef-h-75vh bef-bg-white bef-overflowY-scroll rounded  bef-z-150">
         <button class="position-absolute bef bef-t-0_5rem bef-e-0_5rem btn btn-warning" onclick="closeModal()" >X</button> 
         <h2 class="text-center bef bef-text-principal my-3">¡Gracias por participar!</h2>
+        <div class="d-flex flex-wrap flex-column flex-sm-row justify-content-evenly align-items-center">
           ${products
             .map((product) => {
               return `
-            <div class="d-flex flex-column justify-content-between align-items-center">
-              <img class="w-50" src="${product.image}" alt="${product.name}" title="${product.name}" />
+            <div class="d-flex flex-column justify-content-between align-items-center bef bef-wmx-320px my-3 mx-auto">
+            <img class="w-50" src="${product.image}" alt="${product.name}" title="${product.name}" />
               <div class="w-50">  
-                <h3 class="bef bef-fs-1rem">${product.name}</h3>
+              <h3 class="bef bef-fs-1rem">${product.name}</h3>
                 <p>Preferencia: ${product.preference}</p>
-              </div>
-            </div>
-            `;
+                </div>
+                </div>
+                `;
             })
             .join("")}
-            <button class="d-block mx-auto btn btn-warning" onclick="closeModal()" >Cerrar</button> 
+            </div>
+          <button class="d-block mx-auto btn btn-warning" onclick="closeModal()" >Cerrar</button> 
         </div>
       </div>
       `;

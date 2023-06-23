@@ -37,7 +37,7 @@ function configProductsView() {
     var productsView = "";
     products.forEach(function (product) {
         /* <h3>${product.name}</h3> */
-        productsView += "\n    <div class=\"d-flex flex-wrap justify-content-between align-items-center bef bef-wmx-320px my-3\">\n      <img class=\"w-50\" src=\"" + product.image + "\" alt=\"" + product.name + "\" />\n      <div id=\"input-container-" + product._id + "\" class=\"w-50\">\n        <input type=\"number\" \n        name=\"" + product.name + "\" id=\"" + product.name + "\"\n        onkeyup=\"checkInputValid('" + product._id + "')\"\n        class=\"text-center mx-auto d-block bef bef-bw-0__0__2px__0 bef-w-100px bef-bcFocus-primary\" \n        value=\"" + (product.preference !== 0 ? product.preference : "") + "\" placeholder=\"" + (product.preference !== 0 ? product.preference : "") + "\"\n        min=\"0\" max=\"10\"/>\n      </div>\n    </div>\n  ";
+        productsView += "\n    <div class=\"d-flex flex-wrap justify-content-between align-items-center bef bef-wmx-320px my-3\">\n      <img class=\"w-50\" src=\"" + product.image + "\" alt=\"" + product.name + "\" />\n      <div id=\"input-container-" + product._id + "\" class=\"w-50\">\n        <input type=\"text\" inputmode=\"numeric\" parten=\"[0-9]*\"\n        name=\"" + product.name + "\" id=\"" + product.name + "\"\n        onkeyup=\"checkInputValid('" + product._id + "')\"\n        class=\"text-center mx-auto d-block bef bef-bw-0__0__2px__0 bef-w-100px bef-bcFocus-primary\" \n        value=\"" + (product.preference !== 0 ? product.preference : "") + "\" placeholder=\"" + (product.preference !== 0 ? product.preference : "") + "\"\n        min=\"0\" max=\"10\"/>\n      </div>\n    </div>\n  ";
         window.cssCreate();
     });
     if (!!productsDiv) {
@@ -95,11 +95,11 @@ function onSubmit() {
 function createModal() {
     var main = document.querySelector("main");
     if (!!main) {
-        main.innerHTML += "\n      <div id=\"modal\">\n        <div onclick=\"closeModal()\" class=\"bef bef-w-100vw bef-h-100vh position-fixed start-0 top-0 bef-bg-dark__OPA__0_50 bef-z-100\"></div>\n        <div class=\"position-fixed w-75 p-3 bef bef-s-12_5vw bef-t-12_5vh bef-h-75vh bef-bg-white bef-overflowY-scroll rounded  bef-z-150\">\n        <button class=\"position-absolute bef bef-t-0_5rem bef-e-0_5rem btn btn-warning\" onclick=\"closeModal()\" >X</button> \n        <h2 class=\"text-center bef bef-text-principal my-3\">\u00A1Gracias por participar!</h2>\n          " + products
+        main.innerHTML += "\n      <div id=\"modal\">\n        <div onclick=\"closeModal()\" class=\"bef bef-w-100vw bef-h-100vh position-fixed start-0 top-0 bef-bg-dark__OPA__0_50 bef-z-100\"></div>\n        <div class=\"position-fixed w-75 p-3 bef bef-s-12_5vw bef-t-12_5vh bef-h-75vh bef-bg-white bef-overflowY-scroll rounded  bef-z-150\">\n        <button class=\"position-absolute bef bef-t-0_5rem bef-e-0_5rem btn btn-warning\" onclick=\"closeModal()\" >X</button> \n        <h2 class=\"text-center bef bef-text-principal my-3\">\u00A1Gracias por participar!</h2>\n        <div class=\"d-flex flex-wrap flex-column flex-sm-row justify-content-evenly align-items-center\">\n          " + products
             .map(function (product) {
-            return "\n            <div class=\"d-flex flex-column justify-content-between align-items-center\">\n              <img class=\"w-50\" src=\"" + product.image + "\" alt=\"" + product.name + "\" title=\"" + product.name + "\" />\n              <div class=\"w-50\">  \n                <h3 class=\"bef bef-fs-1rem\">" + product.name + "</h3>\n                <p>Preferencia: " + product.preference + "</p>\n              </div>\n            </div>\n            ";
+            return "\n            <div class=\"d-flex flex-column justify-content-between align-items-center bef bef-wmx-320px my-3 mx-auto\">\n            <img class=\"w-50\" src=\"" + product.image + "\" alt=\"" + product.name + "\" title=\"" + product.name + "\" />\n              <div class=\"w-50\">  \n              <h3 class=\"bef bef-fs-1rem\">" + product.name + "</h3>\n                <p>Preferencia: " + product.preference + "</p>\n                </div>\n                </div>\n                ";
         })
-            .join("") + "\n            <button class=\"d-block mx-auto btn btn-warning\" onclick=\"closeModal()\" >Cerrar</button> \n        </div>\n      </div>\n      ";
+            .join("") + "\n            </div>\n          <button class=\"d-block mx-auto btn btn-warning\" onclick=\"closeModal()\" >Cerrar</button> \n        </div>\n      </div>\n      ";
         window.cssCreate();
     }
 }
